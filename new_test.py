@@ -16,7 +16,7 @@ IMG_PATH = "path_to_test_img"                                            # Path 
 
 def run_test():
     # Define model and send to target device and load best performing weights
-    model = LaneNet(arch="ENet")
+    model = LaneNet(arch="DeepLabv3+")
     model.load_state_dict(torch.load(WEIGHTS_PATH))
     model.to(DEVICE)
 
