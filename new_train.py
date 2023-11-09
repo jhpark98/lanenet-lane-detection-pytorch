@@ -158,7 +158,7 @@ def train_model():
     val_dl = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
     # Define model and send to target device (GPU OR CPU)
-    model = LaneNet(arch="ENet")
+    model = LaneNet(arch="DeepLabv3+")
     model.to(DEVICE)
     model.train()       # set to train model to enable dropouts, batch norm, etc
 
