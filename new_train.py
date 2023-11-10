@@ -57,7 +57,7 @@ def train_step(model, train_dataloader, loss_fn, optimizer, device):
     # determine dataset size
     ds_size = len(train_dataloader.dataset)
 
-    # set model to train mode
+    # set model to train mode (enable dropout layers)
     model.train()
 
     running_loss = 0.0
@@ -66,22 +66,22 @@ def train_step(model, train_dataloader, loss_fn, optimizer, device):
 
     # Iterate over input and send data to target device
     for inputs, binarys, instances in train_dataloader:
-        inputs = inputs.type(torch.FloatTensor).to(device)
-        binarys = binarys.type(torch.LongTensor).to(device)
-        instances = instances.type(torch.FloatTensor).to(device)
+        inputs = inputs.type(torch.FloatTensor).to(device)            # Raw data
+        binarys = binarys.type(torch.LongTensor).to(device)           # Binary masks 
+        instances = instances.type(torch.FloatTensor).to(device)      # Instances
 
         # clear optimizer gradients from previous iteration
         optimizer.zero_grad()
 
         # forward pass - Enable gradient tracking for optimization purposes
         with torch.set_grad_enabled(True):
-            outputs = model(inputs)
-            loss = compute_loss(outputs, binarys, instances, loss_fn)
+            outputs = model(inputs)                                     # Make predictions
+            loss = compute_loss(outputs, binarys, instances, loss_fn)   # Compute prediction loss
 
-            loss[0].backward()    # back propagate the computed gradients dLoss / dX
+            loss[0].backward()    # back propagate and compute gradients dL/dX
             optimizer.step()      # make the optimizer "step" in direction of minimizing loss
 
-        # update loss
+        # update loss 
         running_loss += loss[0].item() * inputs.size(0)
         running_loss_b += loss[1].item() * inputs.size(0)
         running_loss_i += loss[2].item() * inputs.size(0)
@@ -137,7 +137,7 @@ def train_model():
     # Data augmentation for training and validation set
     train_tf = transforms.Compose([
             transforms.Resize((512, 256)),                                                  # need to be 512 x 256 for the model
-            transforms.ColorJitter(brightness=0.1, contrast=0.1, saturation=0.1, hue=0.1),  # color augmentation  (set to recommended values)
+            transforms.ColorJitter(brightness=0.1, contrast=0.1, saturation=0.1, hue=0.1),  # color augmentation  
             transforms.ToTensor(),                                                          # convert array to Tensor
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])            # normalize color scale
 
@@ -166,7 +166,7 @@ def train_model():
     # Default recommended for model: FocalLoss
     loss_fn = FocalLoss(gamma=2, alpha=[0.25, 0.75])
 
-    # Optimizer to minimize loss
+    # Optimizer to minimize loss - extension of Gradient Descent
     optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
 
     # Store the results of each training epoch
