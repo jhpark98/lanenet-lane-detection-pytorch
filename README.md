@@ -17,7 +17,7 @@ path/to/your/unzipped/file should like this:
 |----label_data_0313.json
 |----label_data_0531.json
 |----label_data_0601.json
-|----test_label.json
+|----label_custom.json
 ```
 Next, run the following commands to generate the training, validation, and test sets:
 
