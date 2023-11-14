@@ -26,7 +26,7 @@ path/to/your/unzipped/file should like this:
 python tusimple_transform.py --src_dir path/to/your/unzipped/file --val True --test True
 ```
 
-## Training the model    
+## Environment   
 The environment for training and evaluation:  
 ```
 python=3.6
