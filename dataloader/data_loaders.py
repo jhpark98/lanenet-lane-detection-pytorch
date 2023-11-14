@@ -6,6 +6,7 @@ delete the one-hot representation for instance output
 
 import os
 import torch
+import torch.nn as nn 
 from torch.utils.data import Dataset, DataLoader
 from PIL import Image
 import cv2
