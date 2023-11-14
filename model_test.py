@@ -9,9 +9,9 @@ import cv2
 
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")  # use GPU if available
 TEST_PATH = "./Test_Outputs"                                             # path to store test results
-WEIGHTS_PATH = "log/LaneNet_Best.pth"                                    # path to saved weights
+WEIGHTS_PATH = "log/best_model_DeepLab.pth"                                    # path to saved weights
 
-IMG_PATH = "path_to_test_img"                                            # Path to image to test on
+IMG_PATH = "/home/jihwan98/lanenet-lane-detection-pytorch/test/urban_1_resize.png"                                            # Path to image to test on
 
 
 def run_test():
@@ -42,7 +42,7 @@ def run_test():
 
     # Store results
     img_raw = Image.open(IMG_PATH)
-    img_raw = img_raw.resize((512, 256))
+    img_raw = img_raw.resize((256, 512))
     img_raw = np.array(img_raw)
 
     t = time.time()
@@ -50,6 +50,8 @@ def run_test():
     cv2.imwrite(os.path.join(TEST_PATH, f'raw_input_image_{t}.jpg'), img_raw)
     cv2.imwrite(os.path.join(TEST_PATH, f'instance_output_{t}.jpg'), instance_pred.transpose((1, 2, 0)))
     cv2.imwrite(os.path.join(TEST_PATH, f'binary_output_{t}.jpg'), binary_pred)
+
+    print("Successfully tested image.")
 
 
 if __name__ == "__main__":

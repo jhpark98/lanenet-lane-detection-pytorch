@@ -76,6 +76,7 @@ def train_step(model, train_dataloader, loss_fn, optimizer, device):
         # forward pass - Enable gradient tracking for optimization purposes
         with torch.set_grad_enabled(True):
             outputs = model(inputs)                                     # Make predictions
+            # import pdb; pdb.set_trace()
             loss = compute_loss(outputs, binarys, instances, loss_fn)   # Compute prediction loss
 
             loss[0].backward()    # back propagate and compute gradients dL/dX
@@ -136,13 +137,13 @@ def train_model():
 
     # Data augmentation for training and validation set
     train_tf = transforms.Compose([
-            transforms.Resize((512, 256)),                                                  # need to be 512 x 256 for the model
+            transforms.Resize((256, 512)),                                                  # need to be 256 x 512 for the model
             transforms.ColorJitter(brightness=0.1, contrast=0.1, saturation=0.1, hue=0.1),  # color augmentation  
             transforms.ToTensor(),                                                          # convert array to Tensor
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])            # normalize color scale
 
     val_tf = transforms.Compose([
-            transforms.Resize((512, 256)),
+            transforms.Resize((256, 512)),
             transforms.ToTensor(),
             transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])])
 
@@ -159,6 +160,7 @@ def train_model():
 
     # Define model and send to target device (GPU OR CPU)
     model = LaneNet(arch="DeepLabv3+")
+    # model = LaneNet(arch="ENet")
     model.to(DEVICE)
     model.train()       # set to train model to enable dropouts, batch norm, etc
 
