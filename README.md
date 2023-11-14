@@ -22,7 +22,6 @@ path/to/your/unzipped/file should like this:
 ```
 3. Next, run the following commands to generate the training, validation, and test sets:
 
-Generate training/ val/ test/ set:  
 ```
 python tusimple_transform.py --src_dir path/to/your/unzipped/file --val True --test True
 ```
@@ -44,18 +43,20 @@ If you have Conda installed on your machine, you can create a conda environment 
 conda env create -f environment.yml
 ```
 
-Use the following scripts to train the model.
+## Training 
+Use the model_train.py script to train the model.
 
-```
-python model_train.py --dataset path/to/tusimpledataset/training --model_type DeepLabv3+
-```    
+1. In lines 16-17, edit the paths to the training and validation .txt files
+2. In line 20, adjust the number of epochs for training as desired
+3. Execute the script 
 
-## Testing result    
-A pretrained trained model by myself is located in ./log (only trained in 25 epochs)      
-Test the model:    
-```
-python model_test.py --img ./data/tusimple_test_image/0.jpg
-```
+
+## Testing     
+Use the model_test.py script to test the model's output on an image
+
+1. Edit line 12 to the path for the saved best-performing model weights from training
+2. Set the path to test image on line 14
+3. Execute the script. The results will be stored in the /Test_Outputs directory 
  
 
  
