@@ -46,24 +46,9 @@ conda env create -f environment.yml
 
 Use the following scripts to train the model.
 
-Using example folder with ENet:   
-```
-python model_train.py --dataset ./data/training_data_example
-```
-Using tusimple folder with ENet/Focal loss:   
-```
-python model_train.py --dataset path/to/tusimpledataset/training
-```
-Using tusimple folder with ENet/Cross Entropy loss:   
-```
-python model_train.py --dataset path/to/tusimpledataset/training --loss_type CrossEntropyLoss
-```
-Using tusimple folder with DeepLabv3+:   
 ```
 python model_train.py --dataset path/to/tusimpledataset/training --model_type DeepLabv3+
 ```    
-
-If you want to change focal loss to cross entropy loss, do not forget to adjust the hyper-parameter of instance loss and binary loss in ./model/lanenet/train_lanenet.py    
 
 ## Testing result    
 A pretrained trained model by myself is located in ./log (only trained in 25 epochs)      
