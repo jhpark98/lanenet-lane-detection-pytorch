@@ -19,7 +19,6 @@ import json
 import os
 import os.path as ops
 import shutil
-
 import cv2
 import numpy as np
 
