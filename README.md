@@ -62,37 +62,6 @@ Use the model_test.py script to test the model's output on an image
  
 
 ## Reference:  
-The lanenet project refers to the following research and projects:  
-Neven, Davy, et al. "Towards end-to-end lane detection: an instance segmentation approach." 2018 IEEE intelligent vehicles symposium (IV). IEEE, 2018.   
-```
-@inproceedings{neven2018towards,
-  title={Towards end-to-end lane detection: an instance segmentation approach},
-  author={Neven, Davy and De Brabandere, Bert and Georgoulis, Stamatios and Proesmans, Marc and Van Gool, Luc},
-  booktitle={2018 IEEE intelligent vehicles symposium (IV)},
-  pages={286--291},
-  year={2018},
-  organization={IEEE}
-}
-```  
-Paszke, Adam, et al. "Enet: A deep neural network architecture for real-time semantic segmentation." arXiv preprint arXiv:1606.02147 (2016).   
-```
-@article{paszke2016enet,
-  title={Enet: A deep neural network architecture for real-time semantic segmentation},
-  author={Paszke, Adam and Chaurasia, Abhishek and Kim, Sangpil and Culurciello, Eugenio},
-  journal={arXiv preprint arXiv:1606.02147},
-  year={2016}
-}
-```  
-De Brabandere, Bert, Davy Neven, and Luc Van Gool. "Semantic instance segmentation with a discriminative loss function." arXiv preprint arXiv:1708.02551 (2017).   
-```
-@article{de2017semantic,
-  title={Semantic instance segmentation with a discriminative loss function},
-  author={De Brabandere, Bert and Neven, Davy and Van Gool, Luc},
-  journal={arXiv preprint arXiv:1708.02551},
-  year={2017}
-}
-```  
-https://github.com/MaybeShewill-CV/lanenet-lane-detection    
-https://github.com/klintan/pytorch-lanenet    
-
 DeepLabv3+ Encoder and DeepLabv3+ decoder refer from https://github.com/YudeWang/deeplabv3plus-pytorch
+
+TuSimple dataset acquired from https://www.kaggle.com/datasets/manideep1108/tusimple?resource=download
