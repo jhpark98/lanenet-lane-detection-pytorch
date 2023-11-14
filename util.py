@@ -1,11 +1,33 @@
 import cv2
 import numpy as np
-import cv2
-import numpy as np
 import json
 import os
 
 ''' Prepare Dataset'''
+def resize_image(input_path, output_path, width, height):
+    # Read the image
+    image = cv2.imread(input_path)
+    
+    # Resize the image
+    resized_image = cv2.resize(image, (width, height))
+    
+    # Save the resized image
+    cv2.imwrite(output_path, resized_image)
+
+    # Define the target resolution
+    target_width = 1280
+    target_height = 720
+
+    # Process each file in the input directory
+    for file_name in files:
+        # Check if the file is an image (you may want to add more checks)
+        if file_name.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.bmp')):
+            input_path = os.path.join(input_dir, file_name)
+            output_path = os.path.join(output_dir, file_name)
+            
+            # Resize the image
+            resize_image(input_path, output_path, target_width, target_height)
+
 def get_unique_lane_idx(index):
     lst = index.tolist()
     unique_idx = []
@@ -76,7 +98,6 @@ def generate_label_json():
 
 
 ''' Test'''
-
 # overlay detected lines (binary image) on top of input image
 def overlay_images(binaryImage, inputImage, saveFile):
 
@@ -99,4 +120,5 @@ def overlay_images(binaryImage, inputImage, saveFile):
 
 if __name__ == "__main__":
     generate_label_json()
+    resize_image(input_path, output_path, target_width, target_height) 
     # overlay_images('binary_output.png', 'input.png', 'megusta_comer_pollo.png')
