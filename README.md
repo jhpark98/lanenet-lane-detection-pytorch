@@ -38,27 +38,29 @@ matplotlib
 opencv-python
 pandas
 ```
-Or, if you have Conda installed on your machine, you can simply create a conda environment.
+
+If you have Conda installed on your machine, you can simply create a conda environment.
 ```
 conda env create -f environment.yml
 ```
 
+Use following scripts to train the model.
 
 Using example folder with ENet:   
 ```
-python train.py --dataset ./data/training_data_example
+python model_train.py --dataset ./data/training_data_example
 ```
 Using tusimple folder with ENet/Focal loss:   
 ```
-python train.py --dataset path/to/tusimpledataset/training
+python model_train.py --dataset path/to/tusimpledataset/training
 ```
 Using tusimple folder with ENet/Cross Entropy loss:   
 ```
-python train.py --dataset path/to/tusimpledataset/training --loss_type CrossEntropyLoss
+python model_train.py --dataset path/to/tusimpledataset/training --loss_type CrossEntropyLoss
 ```
 Using tusimple folder with DeepLabv3+:   
 ```
-python train.py --dataset path/to/tusimpledataset/training --model_type DeepLabv3+
+python model_train.py --dataset path/to/tusimpledataset/training --model_type DeepLabv3+
 ```    
 
 If you want to change focal loss to cross entropy loss, do not forget to adjust the hyper-parameter of instance loss and binary loss in ./model/lanenet/train_lanenet.py    
@@ -67,7 +69,7 @@ If you want to change focal loss to cross entropy loss, do not forget to adjust 
 A pretrained trained model by myself is located in ./log (only trained in 25 epochs)      
 Test the model:    
 ```
-python test.py --img ./data/tusimple_test_image/0.jpg
+python model_test.py --img ./data/tusimple_test_image/0.jpg
 ```
  
 
@@ -104,13 +106,7 @@ De Brabandere, Bert, Davy Neven, and Luc Van Gool. "Semantic instance segmentati
   year={2017}
 }
 ```  
-
-
 https://github.com/MaybeShewill-CV/lanenet-lane-detection    
 https://github.com/klintan/pytorch-lanenet    
 
-DeepLabv3+ Encoder and DeepLabv3+ decoder refer from https://github.com/YudeWang/deeplabv3plus-pytorch    
-
-
-
-
+DeepLabv3+ Encoder and DeepLabv3+ decoder refer from https://github.com/YudeWang/deeplabv3plus-pytorch
