@@ -9,7 +9,7 @@ The lane segmentation model used in this repository is trained on the open-sourc
 In addition to training the model on the TuSimple dataset, we incorporate custom images (with a custom label generation implementation) of poor lane-marked rural roads and Speedway. The objective is to train LaneNet on a combination of the TuSimple and custom data and evaluate its performance on unseen samples across these categories.
 
 ## Dataset Configuration
-1. Download the [TuSimple]([url](https://www.kaggle.com/datasets/manideep1108/tusimple?resource=download)) dataset and unzip it.
+1. Download the [TuSimple]([https://www.kaggle.com/datasets/manideep1108/tusimple?resource=download]) dataset and unzip it.
 2. Once the TuSimple dataset has been extracted and add the custom dataset we created (i.e. rural) to ensure that the path to the datasets resembles the following structure: 
 path/to/your/unzipped/file should like this:  
 ```
