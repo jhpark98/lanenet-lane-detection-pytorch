@@ -39,12 +39,12 @@ opencv-python
 pandas
 ```
 
-If you have Conda installed on your machine, you can simply create a conda environment.
+If you have Conda installed on your machine, you can create a conda environment using the yaml file.
 ```
 conda env create -f environment.yml
 ```
 
-Use following scripts to train the model.
+Use the following scripts to train the model.
 
 Using example folder with ENet:   
 ```
