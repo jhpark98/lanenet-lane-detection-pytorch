@@ -7,7 +7,7 @@ import numpy as np
 from PIL import Image
 import cv2
 
-DEVICE = torch.device("cudo:0" if torch.cuda.is_available() else "cpu")  # use GPU if available
+DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")  # use GPU if available
 TEST_PATH = "./Test_Outputs"                                             # path to store test results
 WEIGHTS_PATH = "log/LaneNet_Best.pth"                                    # path to saved weights
 
