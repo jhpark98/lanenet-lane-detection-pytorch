@@ -10,7 +10,7 @@ In addition to training the model on the TuSimple dataset, we incorporate custom
 
 ## Dataset Configuration
 1. Download the [TuSimple](https://www.kaggle.com/datasets/manideep1108/tusimple?resource=download) dataset and unzip it.
-2. Once the TuSimple dataset has been extracted and add the custom dataset we created (i.e. rural) to ensure that the path to the datasets resembles the following structure: 
+2. Once the TuSimple dataset has been extracted, add the custom dataset we created (i.e. rural) to ensure that the path to the datasets resembles the following structure: 
 path/to/your/unzipped/file should like this:  
 ```
 |--dataset
