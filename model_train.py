@@ -13,13 +13,13 @@ import copy
 import matplotlib.pyplot as plt
 
 # Set paths to training, validation, and results data
-TRAIN_PATH = "path/to/tusimpledataset/training/train.txt"
-VAL_PATH = "path/to/tusimpledataset/training/val.txt"
-SAVE_PATH = "./log"
+TRAIN_PATH = "/robodata/public_datasets/TUSimple/train_set/training/train.txt"
+VAL_PATH   = "/robodata/public_datasets/TUSimple/train_set/training/val.txt"
+SAVE_PATH  = "./log"
 
-EPOCHS = 25             # hyper parameter
+EPOCHS = 1             # hyper parameter
 BATCH_SIZE = 4          # hyper parameter
-DEVICE = torch.device("cudo:0" if torch.cuda.is_available() else "cpu")  # use GPU if available
+DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")  # use GPU if available
 
 
 def create_save_path():
@@ -175,7 +175,7 @@ def train_model():
     print(f"Beginning training for LaneNet for {EPOCHS} epochs...\n")
 
     # Keep track of best performing model weights (i.e. minimum loss) during training
-    best_loss = np.inf()
+    best_loss = np.inf
     best_model_wts = copy.deepcopy(model.state_dict())
     best_epoch = None
 
