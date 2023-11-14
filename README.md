@@ -39,7 +39,9 @@ opencv-python
 pandas
 ```
 Or, if you have Conda installed on your machine, you can simply create a conda environment.
-```conda env create -f environment.yml```
+```
+conda env create -f environment.yml
+```
 
 
 Using example folder with ENet:   
