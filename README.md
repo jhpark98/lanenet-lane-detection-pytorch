@@ -48,8 +48,8 @@ conda env create -f environment.yml
 
 ## Training 
 
-The model trained with the dataset configuration discussed above can be accessed [here](https://drive.google.com/file/d/1z_UJ01xIoiusTtfGif8cvXMY0VlDDnfQ/view).
-We trained the model, wih a DeepLabV3+ architecture, on a Quadro RTX 6000 GPU for about 2 hours.
+The model weights trained with the dataset configuration discussed above can be accessed [here](https://drive.google.com/file/d/1z_UJ01xIoiusTtfGif8cvXMY0VlDDnfQ/view).
+We trained the model, with a DeepLabV3+ architecture, on a Quadro RTX 6000 GPU for about 2 hours.
 
 
 If you wish to re-run the training yourself, use our model_train.py script to train the model.
