@@ -78,11 +78,12 @@ def extract_red_lines(image_path):
     return lanes, h_samples
 
 def generate_label_json():
-    with open("label_data_test_custom_test.json", "w") as outfile:
+    with open("label_data_test_custom_test.json", "a") as outfile:
         cases = ["rural", "speedway"]
         n_images = [22, 20]
         for n, case in enumerate(cases):
             indir = "/home/jihwan98/lanenet-lane-detection-pytorch"
+            
             for i in range(1, n_images[n]):
 
                 img_path = f'{indir}/{case}_annotated/{case}{i}.png'
@@ -120,5 +121,8 @@ def overlay_images(binaryImage, inputImage, saveFile):
 
 if __name__ == "__main__":
     generate_label_json()
-    resize_image(input_path, output_path, target_width, target_height) 
+    input_path = "/home/jihwan98/lanenet-lane-detection-pytorch/test/urban_dark.png"
+    # output_path = "./test"
+    output_path = "/robodata/public_datasets/TUSimple/train_set/training"
+    resize_image(input_path, output_path, 1280, 720) 
     # overlay_images('binary_output.png', 'input.png', 'megusta_comer_pollo.png')
