@@ -47,6 +47,8 @@ conda env create -f environment.yml
 ```
 
 ## Training 
+
+The model trained with the dataset configuration discussed above can be accessed [here](https://drive.google.com/file/d/1z_UJ01xIoiusTtfGif8cvXMY0VlDDnfQ/view)
 Use the model_train.py script to train the model.
 
 1. In lines 16-17, edit the paths to the training and validation .txt files
