@@ -10,7 +10,7 @@ In addition to training the model on the TuSimple dataset, we incorporate custom
 
 ## Dataset Configuration
 1. Download the [TuSimple](https://www.kaggle.com/datasets/manideep1108/tusimple?resource=download) dataset and unzip it.
-2. Once the TuSimple dataset has been extracted, add the custom dataset we created (i.e. rural) to ensure that the path to the datasets resembles the following structure: 
+2. Once the TuSimple dataset has been extracted, add the custom dataset we created (e.g. Speedway) and ensure that the path to the datasets resembles the following structure: 
 path/to/your/unzipped/file should like this:  
 ```
 |--dataset
@@ -20,6 +20,9 @@ path/to/your/unzipped/file should like this:
 |----label_data_0601.json
 |----label_custom.json
 ```
+
+The custom data labels can be generated and appended to the main .json labels file using the `generate_label_json()` algorithm in `util.py`. In this function, edit the file path to be one of the training .json files shown above. This will append the custom training data to the TuSimple training data.
+
 3. Next, run the following commands to generate the training, validation, and test sets:
 
 ```
