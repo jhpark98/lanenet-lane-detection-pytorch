@@ -63,6 +63,8 @@ Use the model_test.py script to test the model's output on an image
 Example results are shown below. More results can be seen in the `/Test_Outputs` directory.
 
 ![alt text](https://github.com/jhpark98/lanenet-lane-detection-pytorch/blob/main/Test_Outputs/overlay_1700001654.0073147.jpg?raw=true)
+![alt text](https://github.com/jhpark98/lanenet-lane-detection-pytorch/blob/main/Test_Outputs/overlay_1700001682.5807674.jpg?raw=true)
+
 
  
 
