@@ -49,7 +49,9 @@ conda env create -f environment.yml
 ## Training 
 
 The model trained with the dataset configuration discussed above can be accessed [here](https://drive.google.com/file/d/1z_UJ01xIoiusTtfGif8cvXMY0VlDDnfQ/view)
-Use the model_train.py script to train the model.
+
+
+If you wish to re-run the training yourself, use our model_train.py script to train the model.
 
 1. In lines 16-17, edit the paths to the training and validation .txt files
 2. In line 20, adjust the number of epochs for training as desired
